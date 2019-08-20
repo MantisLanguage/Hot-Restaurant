@@ -74,7 +74,22 @@
 
 
     </div>
-
+    <script type="text/javascript">
+    $("#search-btn").on("click", function() {
+        event.preventDefault();
+     var newPatron = {
+       name: $("#name").val().trim(),
+       email: $("#email").val().trim(),
+       uniqueID: $("#unique").val().trim(),
+       phoneNumber: $("#phone").val().trim()
+     };
+    $.post("/api/tables/patrons", newPatron)
+    .then(function(data) {
+      console.log("add.html", data);
+      alert("Thanks for your reservation");
+    });
+});
+</script>
         
         <h4><a href="">API Table Link</a></h4>
         <h4><a href="">Wait List</a></h4>

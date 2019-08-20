@@ -43,7 +43,6 @@
         </div>
 
 
-
         <script type="text/javascript">
             // Question: What does this code do?
             $(document).ready(function () {
@@ -54,13 +53,8 @@
 
                     
                 
-                        $("#waitlist").append(JSON.stringify(data))
-                        // $("<div>").text(data.name),
-                        // $("<div>").text(data.email),
-                        // $("<div>").text(data.uniqueID),
-                        // $("<div>").text(data.phoneNumber),
-                        // );
-                
+                        $('.waitlistTable').append(JSON.stringify(data))
+                    
                 })});
         </script>
 

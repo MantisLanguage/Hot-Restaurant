@@ -64,6 +64,18 @@ app.get("/", function (req, res) {
     }
     return res.json(false);
  });
+ // Create New Characters - takes in JSON input
+app.post("/api/tables/patrons", function(req, res) {
+    // req.body hosts is equal to the JSON post sent from the user
+    // This works because of our body parsing middleware
+    var newPatron = req.body;
+  
+    console.log(newPatron);
+  
+    patrons.push(newPatron);
+  
+    res.json(newPatron);
+  });
  
  app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
